@@ -1,0 +1,145 @@
+:root {
+    --primary-color: #227aec;
+    --secondary-color: #5896e67e;
+    --title-color: #363636;
+    --background-color: rgb(213, 235, 235);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+	font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+}
+
+h2 {
+    font-size: 200%;
+    margin: 20px 10px 0 20px;
+    color: var(--title-color);
+}
+h3 {
+    font-size: 150%;
+    margin: 10px 10px 20px 20px;
+    color: var(--title-color);
+    font-style: italic;
+}
+
+main {
+    margin-top: 60px; 
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: white;
+    text-align: right;
+    z-index: 1000; 
+}
+
+.header div{
+    margin: 0px 8px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 15px;
+    border-radius: 20px;
+    border: 1px solid var(--primary-color);
+    background: linear-gradient(
+        135deg,
+        var(--secondary-color),
+        var(--primary-color)
+    );
+}
+
+.card div{
+    margin: 5px;
+    text-align: center;
+}
+
+.card img {
+    max-width: 80%;
+    max-height: 100px;
+    height: auto;
+    display: block;    
+}
+
+.date {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-bottom: 0px;
+}
+
+.date p {
+    text-align: right;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.degrees {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.degrees div{
+    margin: 5px;
+    text-align: left;
+    align-self: flex-start;
+}
+
+
+
+#unit {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+#unit option {
+    background: white;
+    color: var(--title-color);
+}
+
+#description {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #111;
+}
+
+#date {
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 13px;
+    color: #333;
+}
+
+#degrees {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+}
+
+#max {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.card div, .card p, .card img, .card label {
+    margin: 0;
+    padding: 0;
+}
+
