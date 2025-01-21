@@ -6,6 +6,10 @@
     --headerButtonTextSelected: #fff;
 }
 
+html {
+    background: #222;
+}
+
 body {
     margin: 0px;
     font-family: Arial, Helvetica, sans-serif;
@@ -61,4 +65,116 @@ header {
 .button-degrees-selected {
     color: var(--headerButtonTextSelected);
     background: var(--accentColor);
+}
+
+.content, h1{
+    margin-top: 0px;
+    color: #fff;
+}
+
+.day {
+    position: relative;
+    float: left;
+    background: #DDD;
+    width: calc(100% - 20px);
+    margin: 0px 10px 10px 10px;
+    height: 160px;
+}
+
+.day-header, .day-info, .day-footer {
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+.day-header {
+    background: #CCC;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.day-header label {
+    margin-left: 10px;
+}
+
+.day-info {
+    background: #BBB;
+    height: calc(100% - 90px);
+}
+
+.day-info-image, .day-info-value {
+    position: relative;
+    float: left;
+    height: 100%;
+}
+
+.day-info-value {
+    width: calc(100% - 100px);
+}
+
+.day-info-image {
+    background: #999;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+}
+.day-info-image img{
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.day-info-temp {
+    position:relative;
+    float: left;
+    background: #777;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.day-footer {
+    background: #AAA;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.div-footer {
+    background: #888;
+    width: calc(100% - 100px);
+}
+
+
+@media only screen and (min-width: 1024px) {
+    .day {
+        width: 20%;
+        height: 280px;
+    }
+
+    .day-header {
+        align-items: center;
+    }
+
+    .day-header-label {
+        margin-left: 0px;
+    }
+
+    .day-info-image {
+        width: 100%;
+        height: calc(100% - 70px);
+    }
+    
+    .day-info-value {
+        width: 100%;
+        height: 70px;
+    }
+
 }

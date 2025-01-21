@@ -12,35 +12,35 @@ var locationKey = ''
 //init
 function init() {
     console.log('Initializing document...')
-    //get geolocation
-    getLocation().then( (location) =>{
-        console.log(location)
+    // //get geolocation
+    // getLocation().then( (location) =>{
+    //     console.log(location)
 
-        //get location info
-        getLocationInfo(location).then((info) =>{
-            console.log(info)
+    //     //get location info
+    //     getLocationInfo(location).then((info) =>{
+    //         console.log(info)
 
-            locationKey = info.Key
+    //         locationKey = info.Key
 
-            var locationName = info.LocalizedName 
-                + ', ' + info.AdministrativeArea.LocalizedName 
-                + ', ' + info.Country.LocalizedName
+    //         var locationName = info.LocalizedName 
+    //             + ', ' + info.AdministrativeArea.LocalizedName 
+    //             + ', ' + info.Country.LocalizedName
 
-            document.querySelector('#label-location').textContent = locationName
-            toggleMetric(config.metric)
+    //         document.querySelector('#label-location').textContent = locationName
+    //         toggleMetric(config.metric)
 
-            getForecast()
-        })
+    //         getForecast()
+    //     })
 
-    })
+    // })
 
-    //events
-    document.querySelector('#button-degrees-c').addEventListener('click',() => {
-        toggleMetric(true)
-    })
-    document.querySelector('#button-degrees-f').addEventListener('click',() => {
-        toggleMetric(false)
-    })
+    // //events
+    // document.querySelector('#button-degrees-c').addEventListener('click',() => {
+    //     toggleMetric(true)
+    // })
+    // document.querySelector('#button-degrees-f').addEventListener('click',() => {
+    //     toggleMetric(false)
+    // })
 }
 
 
