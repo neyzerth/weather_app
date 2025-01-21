@@ -4,6 +4,7 @@
     --headerTextColor: #bbb;
     --headerButtonBackground: #444;
     --headerButtonTextSelected: #fff;
+    --cardBackground: #4f4444;
 }
 
 html {
@@ -75,10 +76,12 @@ header {
 .day {
     position: relative;
     float: left;
-    background: #DDD;
+    background: var(--cardBackground);
     width: calc(100% - 20px);
     margin: 0px 10px 10px 10px;
     height: 160px;
+    /*border-radius: 1px 30px 40px 30px;*/
+    border-radius: 10px;
 }
 
 .day-header, .day-info, .day-footer {
@@ -88,7 +91,6 @@ header {
 }
 
 .day-header {
-    background: #CCC;
     height: 50px;
     display: flex;
     flex-direction: column;
@@ -100,7 +102,6 @@ header {
 }
 
 .day-info {
-    background: #BBB;
     height: calc(100% - 90px);
 }
 
@@ -115,7 +116,6 @@ header {
 }
 
 .day-info-image {
-    background: #999;
     width: 100px;
     display: flex;
     justify-content: center;
@@ -130,7 +130,6 @@ header {
 .day-info-temp {
     position:relative;
     float: left;
-    background: #777;
     width: 50%;
     height: 100%;
     display: flex;
@@ -140,7 +139,6 @@ header {
 }
 
 .day-footer {
-    background: #AAA;
     height: 40px;
     display: flex;
     align-items: center;

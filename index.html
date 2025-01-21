@@ -22,32 +22,38 @@
     <div id="content">
         <h1>5-Day Forecast</h1>
         <div id="forecast">
-            <div class="day">
-                <div class="day-header">
-                    <label >label-day</label>
-                    <label >label-date</label>
-                </div>
 
-                <div class="day-info">
-                    <div class="day-info-image">
-                        <img src="images/icons/1-sunny.svg" alt="sunny-1">
-                    </div>
-                    <div class="day-info-value">
-                        <div class="day-info-temp">
-                            <label id="label-temp-max">00&deg;C</label>
-                            <label>Max</label>
-                        </div>
-                        <div class="day-info-temp">
-                            <label id="label-temp-min">00&deg;C</label>
-                            <label>Min</label>
-                        </div>
-                    </div>
-                </div>
+            <template id="template-day">
 
-                <div class="day-footer">
-                    <label id="label-description">label-description</label>
+                <div class="day">
+                    <div class="day-header">
+                        <label >label-day</label>
+                        <label >label-date</label>
+                    </div>
+
+                    <div class="day-info">
+                        <div class="day-info-image">
+                            <img src="images/icons/1-sunny.svg" alt="sunny-1">
+                        </div>
+                        <div class="day-info-value">
+                            <div class="day-info-temp">
+                                <label id="label-temp-max">00&deg;C</label>
+                                <label>Max</label>
+                            </div>
+                            <div class="day-info-temp">
+                                <label id="label-temp-min">00&deg;C</label>
+                                <label>Min</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day-footer">
+                        <label id="label-description">label-description</label>
+                    </div>
                 </div>
-            </div>
+                
+            </template>
+
         </div>
     </div>
     

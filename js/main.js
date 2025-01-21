@@ -12,6 +12,9 @@ var locationKey = ''
 //init
 function init() {
     console.log('Initializing document...')
+
+    showForecast(getForecast())
+
     // //get geolocation
     // getLocation().then( (location) =>{
     //     console.log(location)
@@ -66,8 +69,60 @@ function toggleMetric(metric){
 
 function getForecast(){
     //get forecast info
-    getForecastInfo(locationKey).then((response) =>{
-        console.clear()
-        console.log(response)
+    showForecast([
+        {
+            Day: {
+                IconPhrase: 'Sunny'
+            }
+        },
+        {
+            Day: {
+                IconPhrase: 'Not Sunny'
+            }
+        },
+        {
+            Day: {
+                IconPhrase: 'Fog'
+            }
+        },
+        {
+            Day: {
+                IconPhrase: 'Raining'
+            }
+        },
+        {
+            Day: {
+                IconPhrase: 'Night'
+            }
+        }
+    ])
+//     getForecastInfo(locationKey).then((response) =>{
+         // console.clear()
+         // console.log(response) 
+//     })
+}
+
+function showForecast(data){
+    //get template content
+    let template = document.getElementById('template-day').content;
+
+    //create fragment
+    let fragment = document.createDocumentFragment();
+
+    //read data
+    data.forEach( d =>{
+        //land data to elements
+        template.querySelector('#label-description').textContent = d.Day.IconPhrase;
+        /*
+            more code xd
+        */ 
+       //clone template
+       let clone = document.importNode(template, true);
+
+       //append fragment
+       fragment.appendChild(clone);
     })
+    
+    //append fragment to parent div
+    document.getElementById('forecast').appendChild(fragment)
 }
