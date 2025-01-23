@@ -13,37 +13,38 @@ var locationKey = ''
 function init() {
     console.log('Initializing document...')
 
-    showForecast(getForecast())
 
-    // //get geolocation
-    // getLocation().then( (location) =>{
-    //     console.log(location)
+    //get geolocation
+    getLocation().then( (location) =>{
+        console.log(location)
 
-    //     //get location info
-    //     getLocationInfo(location).then((info) =>{
-    //         console.log(info)
+        //get location info
+        getLocationInfo(location).then((info) =>{
+            console.log(info)
 
-    //         locationKey = info.Key
+            locationKey = info.Key
 
-    //         var locationName = info.LocalizedName 
-    //             + ', ' + info.AdministrativeArea.LocalizedName 
-    //             + ', ' + info.Country.LocalizedName
+            var locationName = info.LocalizedName 
+                + ', ' + info.AdministrativeArea.LocalizedName 
+                + ', ' + info.Country.LocalizedName
 
-    //         document.querySelector('#label-location').textContent = locationName
-    //         toggleMetric(config.metric)
+            document.querySelector('#label-location').textContent = locationName
+            toggleMetric(config.metric)
 
-    //         getForecast()
-    //     })
+            getForecast()
 
-    // })
+        })
 
-    // //events
-    // document.querySelector('#button-degrees-c').addEventListener('click',() => {
-    //     toggleMetric(true)
-    // })
-    // document.querySelector('#button-degrees-f').addEventListener('click',() => {
-    //     toggleMetric(false)
-    // })
+    })
+
+
+    //events
+    document.querySelector('#button-degrees-c').addEventListener('click',() => {
+        toggleMetric(true)
+    })
+    document.querySelector('#button-degrees-f').addEventListener('click',() => {
+        toggleMetric(false)
+    })
 }
 
 
@@ -69,37 +70,11 @@ function toggleMetric(metric){
 
 function getForecast(){
     //get forecast info
-    showForecast([
-        {
-            Day: {
-                IconPhrase: 'Sunny'
-            }
-        },
-        {
-            Day: {
-                IconPhrase: 'Not Sunny'
-            }
-        },
-        {
-            Day: {
-                IconPhrase: 'Fog'
-            }
-        },
-        {
-            Day: {
-                IconPhrase: 'Raining'
-            }
-        },
-        {
-            Day: {
-                IconPhrase: 'Night'
-            }
-        }
-    ])
-//     getForecastInfo(locationKey).then((response) =>{
-         // console.clear()
-         // console.log(response) 
-//     })
+    getForecastInfo(locationKey).then((response) =>{
+         //console.clear()
+         console.log(response)
+         showForecast(response.DailyForecasts)
+    })
 }
 
 function showForecast(data){
@@ -110,12 +85,20 @@ function showForecast(data){
     let fragment = document.createDocumentFragment();
 
     //read data
-    data.forEach( d =>{
+    data.forEach( d => {
         //land data to elements
+
+        var unit = config.metric ? '°C' : '°F'
+
+        template.querySelector('#label-date').textContent = d.Date
+        
+        template.querySelector('#label-temp-max').textContent = d.Temperature.Maximum.Value + unit
+        template.querySelector('#label-temp-min').textContent = d.Temperature.Minimum.Value+ unit
+
         template.querySelector('#label-description').textContent = d.Day.IconPhrase;
-        /*
-            more code xd
-        */ 
+        
+        //template.querySelector('#day-image')
+        
        //clone template
        let clone = document.importNode(template, true);
 

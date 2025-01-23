@@ -13,27 +13,27 @@
             <img src="images/128px-AccuWeather_Logo.svg.png" alt="AccuWeather_Logo">
         </div>
         <div id="header-right">
-            <label id="label-location">label-location</label>
             <button class="button-degrees" id="button-degrees-c">&deg;C</button>
             <button class="button-degrees" id="button-degrees-f">&deg;F</button>
         </div>
     </header>
 
     <div id="content">
-        <h1>5-Day Forecast</h1>
+        <label id="label-location">label-location</label>
+        <h1 id="title">5-Day Forecast</h1>
         <div id="forecast">
 
             <template id="template-day">
 
                 <div class="day">
                     <div class="day-header">
-                        <label >label-day</label>
-                        <label >label-date</label>
+                        <label id="label-day">label-day</label>
+                        <label id="label-date">label-date</label>
                     </div>
 
                     <div class="day-info">
                         <div class="day-info-image">
-                            <img src="images/icons/1-sunny.svg" alt="sunny-1">
+                            <img id="day-image" src="images/icons/01-sunny.svg" alt="sunny-1">
                         </div>
                         <div class="day-info-value">
                             <div class="day-info-temp">

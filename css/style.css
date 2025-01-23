@@ -81,6 +81,7 @@ header {
     margin: 0px 10px 10px 10px;
     height: 160px;
     /*border-radius: 1px 30px 40px 30px;*/
+    color: #ccc;
     border-radius: 10px;
 }
 
